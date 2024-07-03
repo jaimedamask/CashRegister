@@ -1,5 +1,11 @@
+@font-face {
+    font-family: '00433';
+    src: url(/00433/00433\ Regular/00433\ Regular.ttf);
+}
+
 body {
     background-color: #FD5F22;
+    font-family: '00433';
     margin: 0;
 }
 
