@@ -1,3 +1,16 @@
 body {
     background-color: #FD5F22;
+    margin: 0;
+}
+
+#header {
+    background-color: #5BBDE8;
+    border: 9px solid #2157C3;
+    border-radius: 12px;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #FDEB34;
 }
