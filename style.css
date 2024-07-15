@@ -4,7 +4,10 @@
 }
 
 body {
+    align-items: center;
     background-color: #FD5F22;
+    display: flex;
+    flex-direction: column;
     font-family: '00433';
     margin: 0;
 }
