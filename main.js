@@ -88,4 +88,4 @@ const checkInput = () => {
   checkCashRegister();
 };
 
-purchaseBtn.addEventListener('click', checkCashRegister);
+purchaseBtn.addEventListener('click', checkInput);
