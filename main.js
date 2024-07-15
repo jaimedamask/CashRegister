@@ -15,7 +15,8 @@ const denominations = {
 	'PENNY': 0.01,
 };
 
-let price = 1.87;
+//let price = 1.87;
+let price = 3.26;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -80,7 +81,8 @@ const checkCashRegister = () => {
       let currentDenom = [el[0], 0];
 
       while (change >= denominations[el[0]] && el[1] > 0) {
-        change -= denominations[el[0]];
+        console.log(denominations[el[0]]);
+        change = parseFloat((change - denominations[el[0]]).toFixed(2));
         el[1] -= denominations[el[0]];
         currentDenom[1] += denominations[el[0]];
       }
@@ -89,8 +91,6 @@ const checkCashRegister = () => {
         result.change.push(currentDenom);
       }
     }
-
-    change = Math.floor(change * 100) / 100;
   }
 
   if (change > 0) {
