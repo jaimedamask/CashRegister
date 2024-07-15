@@ -36,6 +36,14 @@ const displayCID = () => {
   }
 };
 
+
+const formatResults = (status, change) => {
+  changeDue.innerHTML = `<p>Status: ${status}</p>`;
+  change.forEach(el => {
+    changeDue.innerHTML += `<p>${el[0]}: $${el[1]}</p>`;
+  });
+};
+
 const checkCashRegister = () => {
   let cashInput = parseFloat(cash.value);
 
