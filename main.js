@@ -37,27 +37,27 @@ const displayCID = () => {
 };
 
 const checkCashRegister = () => {
-  if (Number(cash.value) < price) {
+  let cashInput = parseFloat(cash.value);
+
+  if (cashInput < price) {
     alert('Customer does not have enough money to purchase the item');
     cash.value = '';
     return;
   }
 
-  if (Number(cash.value) === price) {
+  if (cashInput === price) {
     changeDue.innerHTML = '<p>No change due - customer paid with exact cash</p>';
     cash.value = '';
     return;
   }
 
-  let change = cash.value - price;
+  let change = cashInput - price;
   let cidTotal = 0;
   let result = { status: 'OPEN', change: [] };
 
   for (let el of cid) {
     cidTotal += el[1];
   }
-
-  console.log(cidTotal);
 
   if (change > cidTotal) {
     return (changeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
@@ -77,16 +77,18 @@ const checkCashRegister = () => {
 
       if (currentDenom[1] > 0) {
         result.change.push(currentDenom);
-        console.log(result);
       }
     }
 
-    if (change > 0) {
-      return (changeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
-    }
-
-    console.log(result);
+    change = Math.floor(change * 100) / 100;
   }
+
+  if (change > 0) {
+    return (changeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
+  }
+
+  formatResults(result.status, result.change);
+  displayCID();
 };
 
 const checkInput = () => {
