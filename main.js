@@ -80,4 +80,12 @@ const checkCashRegister = () => {
   }
 };
 
+const checkInput = () => {
+  if (!cash.value) {
+    return;
+  }
+
+  checkCashRegister();
+};
+
 purchaseBtn.addEventListener('click', checkCashRegister);
