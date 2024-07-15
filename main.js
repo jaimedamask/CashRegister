@@ -1,6 +1,8 @@
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 const changeDue = document.getElementById('change-due');
+const cidDisplay = document.getElementById('cid-display');
+const priceDisplay = document.getElementById('price');
 const denominations = {
 	'ONE HUNDRED': 100,
 	'TWENTY': 20,
@@ -25,6 +27,14 @@ let cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
+
+const displayCID = () => {
+  for (let i = 0; i < cid.length; i++) {
+    cidDisplay.innerHTML += `
+      <p>${cid[i][0]}: ${cid[i][1]}</p>
+    `
+  }
+};
 
 const checkCashRegister = () => {
   if (Number(cash.value) < price) {
@@ -54,7 +64,6 @@ const checkCashRegister = () => {
   } else if (change === cidTotal) {
     return result.status = 'CLOSED';
   } else {
-    let changeArr = [];
     let cidReversed = cid.reverse();
 
     for (let el of cidReversed) {
@@ -87,5 +96,7 @@ const checkInput = () => {
 
   checkCashRegister();
 };
+
+window.onload = displayCID;
 
 purchaseBtn.addEventListener('click', checkInput);
