@@ -15,8 +15,7 @@ const denominations = {
 	'PENNY': 0.01,
 };
 
-//let price = 1.87;
-let price = 3.26;
+let price = 1.87;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -62,7 +61,7 @@ const checkCashRegister = () => {
     return;
   }
 
-  let change = cashInput - price;
+  let change = Number((cashInput - price).toFixed(2));
   let cidTotal = 0;
   let result = { status: 'OPEN', change: [] };
 
@@ -73,23 +72,28 @@ const checkCashRegister = () => {
   if (change > cidTotal) {
     return (changeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
   } else if (change === cidTotal) {
-    return result.status = 'CLOSED';
-  } else {
-    let cidReversed = cid.reverse();
+    result.status = 'CLOSED';
+  }
 
-    for (let el of cidReversed) {
-      let currentDenom = [el[0], 0];
+  let cidCopy = [...cid];
+  let cidReversed = cidCopy.reverse();
 
-      while (change >= denominations[el[0]] && el[1] > 0) {
-        console.log(denominations[el[0]]);
-        change = parseFloat((change - denominations[el[0]]).toFixed(2));
-        el[1] -= denominations[el[0]];
-        currentDenom[1] += denominations[el[0]];
-      }
+  for (let el of cidReversed) {
+    let currentDenom = [el[0], 0];
 
-      if (currentDenom[1] > 0) {
-        result.change.push(currentDenom);
-      }
+    while (change >= denominations[el[0]] && el[1] > 0) {
+      change = Number((change - denominations[el[0]]).toFixed(2));
+      el[1] -= denominations[el[0]];
+      el[1] = el[1].toFixed(2);
+      console.log(el[1]);
+      currentDenom[1] += denominations[el[0]];
+    }
+
+    console.log(cid);
+
+    if (currentDenom[1] > 0) {
+      currentDenom[1] = parseFloat(currentDenom[1].toFixed(2));
+      result.change.push(currentDenom);
     }
   }
 
