@@ -30,6 +30,7 @@ let cid = [
 
 const displayCID = () => {
   cidDisplay.innerHTML = '';
+  priceDisplay.textContent = `Total: $${price}`;
 
   for (let i = 0; i < cid.length; i++) {
     cidDisplay.innerHTML += `
