@@ -8,7 +8,7 @@ body {
     background-color: #FD5F22;
     display: flex;
     flex-direction: column;
-    font-family: '00433';
+    font-family: '00433', sans-serif;
     margin: 0;
 }
 
@@ -43,4 +43,15 @@ h3 {
 
 #cash-label {
     font-size: 32px;
+}
+
+#purchase-btn {
+    background-color: #0A3561;
+    border: none;
+    border-radius: 5px;
+    color: #FDEB34;
+    font-family: '00433', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    padding: 10px;
 }
