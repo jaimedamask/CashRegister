@@ -121,3 +121,14 @@ h3 {
     margin-top: 10px;
     width: 300px;
 }
+
+#change-due:empty {
+    display: none;
+}
+
+#change-due {
+    background-color: #B8E3F5;
+    font-family: monospace;
+    margin: 15px 0;
+    padding: 15px;
+}
