@@ -42,7 +42,7 @@ const displayCID = () => {
 
 
 const formatResults = (status, change) => {
-  changeDue.innerHTML = `<p>Status: ${status}</p>`;
+  changeDue.innerHTML = `<p><b>Status: ${status}</b></p>`;
   change.forEach(el => {
     changeDue.innerHTML += `<p>${el[0]}: $${el[1]}</p>`;
   });
