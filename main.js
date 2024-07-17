@@ -34,7 +34,7 @@ const displayCID = () => {
 
   for (let i = 0; i < cid.length; i++) {
     cidDisplay.innerHTML += `
-      <p>${cid[i][0]}: ${cid[i][1]}</p>
+      <p>${cid[i][0]}: $${cid[i][1]}</p>
     `
   }
 };
