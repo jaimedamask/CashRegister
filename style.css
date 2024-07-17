@@ -55,3 +55,69 @@ h3 {
     letter-spacing: 2px;
     padding: 10px;
 }
+
+#price {
+    background-color: #B8E3F5;
+    border: 10px solid #0A3561;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 20px auto 0 auto;
+    padding: 5px;
+    width: 140px;
+}
+
+#screen-connector {
+    background-color: #0A3561;
+    height: 20px;
+    margin: 0 auto;
+    width: 50px;
+}
+
+#trapezoid {
+    border-bottom: 35px solid #0A3561;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+}
+
+#main-body {
+    align-items: center;
+    background-color: #0A3561;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.buttons-container {
+    height: 100px;
+    width: 100px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+    margin-left: 15px;
+}
+
+.buttons {
+    background-color: #5BBDE8;
+    height: 30px;
+    width: 30px;
+}
+
+#cid-display {
+    background-color: #B8E3F5;
+    font-family: monospace;
+    font-size: 10px;
+    line-height: .8;
+    margin: 15px;
+    padding: 0 10px;
+}
+
+#cash-drawer {
+    background-color: #0A3561;
+    height: 50px;
+    margin-top: 10px;
+    width: 300px;
+}
