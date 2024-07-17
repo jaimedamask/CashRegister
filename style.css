@@ -38,7 +38,7 @@ h3 {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 #cash-label {
