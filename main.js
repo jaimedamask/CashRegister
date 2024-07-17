@@ -103,6 +103,8 @@ const checkCashRegister = () => {
     return (changeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
   }
 
+  cash.value = '';
+
   formatResults(result.status, result.change);
   displayCID();
 };
