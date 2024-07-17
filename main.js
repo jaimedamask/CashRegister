@@ -120,3 +120,9 @@ const checkInput = () => {
 window.onload = displayCID;
 
 purchaseBtn.addEventListener('click', checkInput);
+
+cash.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    checkInput();
+  }
+});
